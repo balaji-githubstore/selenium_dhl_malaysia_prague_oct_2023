@@ -1,0 +1,2 @@
+Securiton.HealthRecordAutomation.LoginUITest.VerifyPlaceholderTest
+Securiton.HealthRecordAutomation.LoginUITest.VerifyTitleTest
