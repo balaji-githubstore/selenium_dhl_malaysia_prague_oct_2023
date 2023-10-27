@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-//code to work on FindElements
+//code to work on FindElements - oct 27
 
 public class Demo11FindElements {
 	
