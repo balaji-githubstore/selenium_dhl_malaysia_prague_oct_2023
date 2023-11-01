@@ -20,7 +20,7 @@ public class Demo2FBLogin {
 		
 		
 		
-//		By loc=By.id("email");
+		By loc=By.id("email");
 //		WebElement element= driver.findElement(loc);
 //		element.sendKeys("bala123456756565@gmail.com");
 		

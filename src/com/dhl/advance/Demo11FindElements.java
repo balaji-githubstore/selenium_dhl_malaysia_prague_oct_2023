@@ -13,7 +13,6 @@ public class Demo11FindElements {
 	
 	public static void main(String[] args) {
 		
-		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
