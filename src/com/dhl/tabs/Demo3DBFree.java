@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Demo2DBFree {
+public class Demo3DBFree {
 
 	public static void main(String[] args) {
 		
@@ -22,26 +22,26 @@ public class Demo2DBFree {
 		
 		//switch to second tab
 		ArrayList<String> windows=new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(windows.get(1));
+		
+		for(String win : windows)
+		{
+			System.out.println(win);
+			driver.switchTo().window(win);
+			System.out.println(driver.getTitle());
+			if(driver.getTitle().equals("phpMyAdmin"))
+			{
+				break;
+			}
+			System.out.println("------------------------");
+		}
+		
+		//driver will point to tab with title "phpMyAdmin"
 		
 		driver.findElement(By.id("input_username")).sendKeys("admin");
 		//enter password as admin123
 		driver.findElement(By.id("input_password")).sendKeys("admin123");
 		//click on login
 		driver.findElement(By.id("input_go")).click();
-		
-		
-		String actualError=driver.findElement(By.id("pma_errors")).getText();
-		System.out.println(actualError);
-		
-		driver.close(); //check which tab is closed
-		
-		//switch to tab 1
-		driver.switchTo().window(windows.get(0));
-
-		System.out.println(driver.getTitle());
-		
-		driver.quit();
 	}
 
 }
