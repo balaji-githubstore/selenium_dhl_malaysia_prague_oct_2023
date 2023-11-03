@@ -26,12 +26,13 @@ public class Demo3RoyalShadowRoot {
 		
 //		option 1 - shadow root handling using javascript
 		
-		//JavascriptExecutor js=(JavascriptExecutor) driver;
-	//	js.executeScript("document.querySelector(\"body > app-root > div > app-login-hybris > div > global-login\").shadowRoot.querySelector(\"sign-in-form\").shadowRoot.querySelector(\"section > a\").click()");
 		
-		//document.querySelector("global-login").shadowRoot.querySelector("sign-in-form").shadowRoot.querySelector("[aria-label='Create an account']")
-	
-	
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		//click on create new account
+		js.executeScript("document.querySelector(\"body > app-root > div > app-login-hybris > div > global-login\").shadowRoot.querySelector(\"sign-in-form\").shadowRoot.querySelector(\"section > a\").click()");
+		//click on create new account
+		js.executeScript("document.querySelector(\"global-login\").shadowRoot.querySelector(\"sign-in-form\").shadowRoot.querySelector(\"[aria-label='Create an account']\").click()");
+		
 		//option 2 -- handling using findElement - use only css selector                                 
 		
 		var sc1= driver.findElement(By.cssSelector("global-login")).getShadowRoot();
@@ -48,15 +49,16 @@ public class Demo3RoyalShadowRoot {
 		
 		var scp2=sc1.findElement(By.cssSelector("create-account[class='hydrated']")).getShadowRoot();
 		
+		//firstname
 		var scp3= scp2.findElements(By.cssSelector("input-text[class='hydrated']")).get(0).getShadowRoot();
 		scp3.findElement(By.cssSelector("#input-text-name")).sendKeys("john");
 		
+		//lastname
 		var scp4= scp2.findElements(By.cssSelector("input-text[class='hydrated']")).get(1).getShadowRoot();
-		
 		scp4.findElement(By.cssSelector("#input-text-lastName")).sendKeys("wick");
 		
-
-
+		
+		
 		
 	
 	}
